@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "Welcome!"
+date:   2020-7-28 10:18:00
+categories: General
+---
+
+Welcome to my blog.
+
+I've built my first blog in 2014 and many others in the last few years.
+These blogs have closed because of many reasons, while I still have the willingness to re-open a blog to record my life and the path of becoming a more intelligent person.
+
+I have a large number of hobbies although I'm not an expert on most of those hobbies. 
+I'm happy with having those hobbies and this blog will record the life being with those hobbies.
+
+On my own view, it's important to have hobbies in one's life for the reason that hobbies will give you the passion of living.
+Thanks to my hobbies, I'm now learning math and doing research on deep learning and machine learning.
+
+It will be fortunate if you have the same interests as me so you may learn something from this blog.
+If not, you may be interested in the content about my daily life, which is also included in this blog.

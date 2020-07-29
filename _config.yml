@@ -1,0 +1,17 @@
+name: Tao Harald
+description: Blogging about life and interests
+meta_description: "Tao Harald's Jekyll Site, Blogging about life and interests"
+
+markdown: kramdown
+highlighter: rouge
+logo: false
+paginate: 15
+domain_name: "http://yourblog-domain.com"
+gems: [jekyll-paginate]
+
+# Details for the RSS feed generator
+# url: "/rss"
+author: "Tao Harald"
+
+# Disqus config
+# disqus-shortname: ""
