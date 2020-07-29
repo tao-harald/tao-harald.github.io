@@ -3,4 +3,10 @@ layout: page
 title: About me 
 ---
 
-This is a static page. It could be an 'about page' if you'd like.
+
+- I'm an undergraduate student.
+- I’m currently studying Mathematics in Sun Yat-sen University.
+
+- I love Algebra and have willing to do research on it.
+- I want to be an amateur photographer.
+- I’m currently working on Machine Learning / Deep Learning.
