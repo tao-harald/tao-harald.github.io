@@ -6,7 +6,7 @@ markdown: kramdown
 highlighter: rouge
 logo: false
 paginate: 15
-domain_name: "https://tao-harald.github.io"
+domain_name: "https://taohuang.tech"
 gems: [jekyll-paginate]
 
 # Details for the RSS feed generator
