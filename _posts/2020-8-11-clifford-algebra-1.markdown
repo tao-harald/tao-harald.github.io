@@ -32,8 +32,8 @@ categories: Math
         \mathbf{e}_2 & \text{if } p \text{ even, } q \text{ odd} \\
         \mathbf{e}_1 \mathbf{e}_2 & \text{if } p \text{ odd, } q \text{ odd}
     \end{matrix} \right. .\] 从而我们可以考虑形如
-\[\mathbf{a} = a^0 + a^1 \mathbf{e}_1 + a^2 \mathbf{e}_2 + a^{1,2} \mathbf{e}_1 \mathbf{e}_2 \quad (a^i \in \mathbb{R}, \forall i=0,1,2,3)\]
-的元素组成的数域（其中加减乘除运算显然是封闭的）。 该数域上的乘法即为 \[\begin{aligned}
+\[\mathbf{a} = a^0 + a^1 \mathbf{e}_1 + a^2 \mathbf{e}_2 + a^{1,2} \mathbf{e}_1 \mathbf{e}_2 \quad (a^i \in \mathbb{R}, \forall i=0,1,2,(1,2))\]
+的元素组成的代数。 该代数上的乘法即为 \[\begin{aligned}
         \mathbf{a} \cdot \mathbf{b} = & \quad a^0b^0 + a^1b^1 + a^2b^2 + a^{1,2} b^{1,2} \\
         & + (a^0b^1 + a^1b^0 - a^2b^{1,2} + a^{1,2}b^2 ) \mathbf{e}_1\\
         & + (a^0b^2 + a^1b^{1,2} + a^2b^0 - a^{1,2}b^1  ) \mathbf{e}_1\\
@@ -44,18 +44,18 @@ categories: Math
         & + 2(a^1b^2 - a^2b^1 ) \mathbf{e}_1 \mathbf{e}_2.
     \end{aligned}\]
 
-仿照复数域，我们也可以定义该数域上的共轭、模和逆 \[\begin{aligned}
+仿照复数域，我们也可以定义该代数上的共轭、模和逆 \[\begin{aligned}
     \overline{\mathbf{a}} &= a^0 - a^1 \mathbf{e}_1 - a^2 \mathbf{e}_2 + a^{1,2} \mathbf{e}_1 \mathbf{e}_2; \nonumber \\
     |\mathbf{a}|^2 &= \mathbf{a} \overline{\mathbf{a}} = a^0 a^0 - a^1 a^1 - a^2 a^2 + a^{1,2} a^{1,2}; \nonumber\\
     \mathbf{a}^{-1}&= \frac{\overline{\mathbf{a}}}{|\mathbf{a}|^2}. \label{eqn:reverse}\end{aligned}\]
 
-通过该数域上的的线性变换我们可以导出该数域的一个矩阵表示，只是限于篇幅，不再赘述。
+通过该代数上的的线性变换我们可以导出该代数的一个矩阵表示，只是限于篇幅，不再赘述。
 
 对于 \(\mathbb{R}^n\) 的元素的2范数 ，这一分解就可以表示为
 \[\delta_{i,j}x^ix^j = (x^i \mathbf{e}_i)^2.\] 我们可以将这种构造推广到实对称矩阵 \(G\) ：
 \[g_{i,j}x^ix^j = (x^i \mathbf{e}_i)^2.\] 那么所构造的元素满足
 \[\mathbf{e}_i \mathbf{e}_j + \mathbf{e}_j \mathbf{e}_i = 2g_{i,j}.\] 而
-\(\{\mathbf{e}_1, \cdots,  \mathbf{e}_n\}\) 生成的数域，就是一种Clifford代数。 对
+\(\{\mathbf{e}_1, \cdots,  \mathbf{e}_n\}\) 生成的代数，就是一种Clifford代数。 对
 \(G\) 进行标准正交化我们就得到了正交Clifford代数：
 \[\mathbf{e}_i \mathbf{e}_j + \mathbf{e}_j \mathbf{e}_i =\left\{ \begin{matrix}-1,0,+1&i=j,\\0&i\not =j.\end{matrix}\right..\]
 若令 \(n=2, g_{i,j} = - \delta_{i,j}\) ，我们就得到了经典的四元数。
