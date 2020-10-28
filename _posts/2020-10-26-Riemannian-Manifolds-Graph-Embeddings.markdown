@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Graph Embeddings on Riemannian Manifolds"
-categories: Math
+categories: Deep Learning
 ---
 
-https://arxiv.org/abs/2002.08665
+[arxiv: Computationally Tractable Riemannian Manifolds for Graph Embeddings](https://arxiv.org/abs/2002.08665)
 
 This article is about the work of graph embedding on Riemannian manifolds. The embedding algorithm on two matrix manifolds (SPD manifold (manifold with non-positive curvature) and Grassmann manifold (manifold with non-negative curvature)) is given and their performances are better than the previous hyperbolic embedding and elliptical embedding. The author claims that these enhancements in embedding performances give new evidence for the importance of non-Euclidean embeddings in machine learning.
 
