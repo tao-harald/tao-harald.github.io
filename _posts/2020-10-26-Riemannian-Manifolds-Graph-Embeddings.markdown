@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Graph Embeddings on Riemannian Manifolds"
-categories: Deep Learning
+categories: Deep_Learning
 ---
 
 [arxiv: Computationally Tractable Riemannian Manifolds for Graph Embeddings](https://arxiv.org/abs/2002.08665)
