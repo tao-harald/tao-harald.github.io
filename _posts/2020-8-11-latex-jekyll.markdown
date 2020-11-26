@@ -21,3 +21,7 @@ By adding
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 ```
 in the `<head>` of `_layouts/default.html`, the inline equation (between `\(` and `\)`) and display equation (between `\[` and `\]`) will be rendered automatically.
+
+For example:
+
+<p> \[ x^n + y^n = z^n \] </p>
