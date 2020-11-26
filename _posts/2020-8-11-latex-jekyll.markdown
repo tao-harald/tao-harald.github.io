@@ -1,11 +1,9 @@
 ---
 layout: post
-title:  "Publish LaTeX documents on Jekyll"
+title:  "Publish LaTeX on Jekyll"
 categories: General
+abstract: "As I wrote most of my documents in LaTeX, it's important to find a convenient way to publish them on the web platform like Jekyll. Here is my way to publish it."
 ---
-
-As I wrote most of my documents in LaTeX, it's important to find a convenient way to publish them on the web platform like Jekyll.
-Here is my way to publish it.
 
 
 First we need to use pandoc to convert file form LaTeX to markdown:

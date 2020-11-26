@@ -1,17 +1,4 @@
-name: Tao Harald
-description: Blogging about life and interests
-meta_description: "Tao Harald's Jekyll Site, Blogging about life and interests"
-
-markdown: kramdown
-highlighter: rouge
-logo: false
-paginate: 15
-domain_name: "https://taohuang.tech"
-gems: [jekyll-paginate]
-
-# Details for the RSS feed generator
-# url: "/rss"
-author: "Tao Harald"
-
-# Disqus config
-# disqus-shortname: ""
+title: Tao Huang's Blog
+logo: assets/img/profile.jpg
+description: Blogging about life and interests.
+author: Tao Huang

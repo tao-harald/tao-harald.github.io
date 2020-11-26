@@ -1,12 +1,11 @@
 ---
 layout: post
 title: "Graph Embeddings on Riemannian Manifolds"
-categories: Deep_Learning
+categories: "Deep_Learning"
+abstract: "This article is about the work of graph embedding on Riemannian manifolds. The embedding algorithm on two matrix manifolds (SPD manifold (manifold with non-positive curvature) and Grassmann manifold (manifold with non-negative curvature)) is given and their performances are better than the previous hyperbolic embedding and elliptical embedding. The author claims that these enhancements in embedding performances give new evidence for the importance of non-Euclidean embeddings in machine learning."
 ---
 
 [arxiv: Computationally Tractable Riemannian Manifolds for Graph Embeddings](https://arxiv.org/abs/2002.08665)
-
-This article is about the work of graph embedding on Riemannian manifolds. The embedding algorithm on two matrix manifolds (SPD manifold (manifold with non-positive curvature) and Grassmann manifold (manifold with non-negative curvature)) is given and their performances are better than the previous hyperbolic embedding and elliptical embedding. The author claims that these enhancements in embedding performances give new evidence for the importance of non-Euclidean embeddings in machine learning.
 
 The main embedding method is to optimize an SNE loss function extended to Riemannian manifolds through the method of gradient descent, the purpose is to keep the original graph structure as much as possible during the embedding process.
 On the SPD manifold, the author compares two metrics, Stein divergence, and canonical distance.
