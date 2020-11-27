@@ -17,16 +17,14 @@ about: 'about.html'
         </h4>
         <br />
     </div>
-<ul>
-  {% for post in site.posts %}
-    <h3>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </h3>
-    {% if post.abstract %}
-      <p>{{post.abstract}}</p>
-    {% endif %}
-    <br />
-  {% endfor %}
-</ul>
+{% for post in site.posts %}
+  <h3>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </h3>
+  {% if post.abstract %}
+    <p>{{post.abstract}}</p>
+  {% endif %}
+  <br />
+{% endfor %}
 <br />
 </div>
