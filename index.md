@@ -21,9 +21,13 @@ about: 'about.html'
   <h3>
     <a href="{{ post.url }}">{{ post.title }}</a>
   </h3>
-  {% if post.abstract %}
-    <p>{{post.abstract}}</p>
-  {% endif %}
+  <p>
+    {% if post.abstract %}
+      {{ post.abstract }}
+    {% else %}
+      {{ post.excerpt }}
+    {% endif %}
+  </p>
   <br />
 {% endfor %}
 <br />
