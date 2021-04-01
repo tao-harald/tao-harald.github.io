@@ -3,10 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" href="/assets/img/profile.jpg" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://unpkg.com/latex.css/style.min.css" />
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/latex.css/style.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script>
   <title>{{ page.title }} | {{ site.title }}</title>
 </head>
 
@@ -22,8 +26,13 @@
 
     </section>
     <footer>
-      <p><small>Hosted on GitHub Pages, thanks <a href='https://github.com/pages-themes/minimal'> minimal</a> , <a href='https://github.com/vincentdoerig/latex-css'> latex-css</a></small>.
-      </p>
+      <small>
+        {% if page.categories %}
+        Categories: {% for cat in page.categories %} {{ cat }} {% endfor %}
+        <br>
+        {% endif %}
+        Hosted on GitHub Pages, thanks <a href='https://github.com/pages-themes/minimal'> Minimal theme </a> , <a href='https://github.com/vincentdoerig/latex-css'> LaTeX.css</a> , <a href='https://katex.org/'> KaTeX</a>.
+      </small>
     </footer>
   </div>
 </body>
