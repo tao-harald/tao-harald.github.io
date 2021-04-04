@@ -8,7 +8,7 @@ about: 'about.html'
 <div class="vertical">
     <br />
     <div align="center">
-        <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        <h1>\(\tau \)ao's Blog</h1>
         {% if site.description %} <h4> {{site.description}} </h4> {% endif %}
         <h4>
             {% if page.about %} <a href='{{page.about | relative_url}}'> About me</a> {% endif %}
