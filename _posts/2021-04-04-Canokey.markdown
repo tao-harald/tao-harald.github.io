@@ -4,6 +4,9 @@ title:  "Use Canokey to secure your digital life"
 categories: General
 ---
 
+I'm using [Canokey(STM32)](https://github.com/canokeys/canokey-stm32) to secure my account and data.
+
+
 That's a signed commit using gpg on Canokey, using:
 ```
 git commit -a -S -m 'Signed commit'
