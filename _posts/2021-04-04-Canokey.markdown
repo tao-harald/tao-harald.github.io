@@ -6,8 +6,13 @@ categories: General
 
 I'm using [Canokey(STM32)](https://github.com/canokeys/canokey-stm32) to secure my account and data.
 
-
 That's a signed commit using gpg on Canokey, using:
 ```
 git commit -a -S -m 'Signed commit'
 ```
+If you meet **The email in this signature doesn’t match the committer email.**, try to change the commiter eamil:
+```
+git config --global user.email your.email@gpg.key
+```
+or add a new email address to your gpg key: [Associating an email with your GPG key
+](https://docs.github.com/en/github/authenticating-to-github/associating-an-email-with-your-gpg-key).
