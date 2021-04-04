@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "Use Canokey to secure your digital life"
+categories: General
+---
+
+That's a signed commit using gpg on Canokey, using:
+```
+git commit -a -S -m 'Signed commit'
+```
