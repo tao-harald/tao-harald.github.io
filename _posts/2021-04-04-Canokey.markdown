@@ -12,7 +12,7 @@ I'm using [NUCLEO-L432KC](https://os.mbed.com/platforms/ST-Nucleo-L432KC/) devel
 As stated,
 > The NFC and touch sensing functions are unavailable on NUCLEO board.
 
-While you can work around using a male to female jumper wire by linking the 3.3v pin and SB12 on the board when touch is required [^2] :
+Touch function is indispensable in many authentication. While you can work around using a male to female jumper wire by linking the 3.3v pin and SB12 on the board when touch is required [^2] :
 ![](/assets/img/canokey_sb12.jpg)
 
 You can also make your own USB breakout board, on which you can add a button to be the touch key.  
@@ -66,7 +66,28 @@ or add a new email address to your gpg key: [Associating an email with your GPG 
 ](https://docs.github.com/en/github/authenticating-to-github/associating-an-email-with-your-gpg-key).
 
 
+## OTP
+Some websites (like Google, Github) support OTP as Two-factor authentication, you can use Canokey to secure and manage your OTP. 
+To do so, just visit [Canokey Web Console](https://console.canokeys.org/oath) and connect your device. 
+When adding a credential, the default config (for most websites) shoud be 
+ - Key Encoding: Base32
+ - Algorithm: HMAC-SHA1
+ - Type: TOTP
 
+After adding, you can click `Calculate TOTP` to get your OTP.
+
+
+## FIDO2/U2F
+
+You can set a PIN using Windows Hello. 
+
+You can use your device to login website supporting WebAuthn.
+
+You can also follow [this guide](https://wiki.archlinux.org/index.php/Universal_2nd_Factor) to authentication for Arch Linux.
+```
+ssh-keygen -t ecdsa-sk
+```
+will allow you to SSH with authentication from your Canokey. [Github](https://github.community/t/when-can-i-use-ssh-public-key-type-like-ed25519-sk-and-ecdsa-sk/3144) doesn't support `ecdsa-sk`.
 
 [^1]: You can follow this [guide](https://shawnhymel.com/1795/getting-started-with-stm32-nucleo-usb-virtual-com-port/).
 
