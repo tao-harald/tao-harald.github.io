@@ -6,13 +6,70 @@ categories: General
 
 I'm using [Canokey(STM32)](https://github.com/canokeys/canokey-stm32) to secure my account and data.
 
-That's a signed commit using gpg on Canokey, using:
+## Hardware
+
+I'm using [NUCLEO-L432KC](https://os.mbed.com/platforms/ST-Nucleo-L432KC/) development board with USB breakout [^1] .
+As stated,
+> The NFC and touch sensing functions are unavailable on NUCLEO board.
+
+While you can work around using a male to female jumper wire by linking the 3.3v pin and SB12 on the board when touch is required [^2] :
+![](/assets/img/canokey_sb12.jpg)
+
+You can also make your own USB breakout board, on which you can add a button to be the touch key.  
+
+## Firmware 
+I'm using Arch Linux to build the Firmware:
+```
+sudo pacman -S arm-none-eabi-gcc arm-none-eabi-newlib
+git clone --recursive https://github.com/canokeys/canokey-stm32
+cd canokey-stm32/ && mkdir build && cd build
+cmake -DCROSS_COMPILE=/usr/bin/arm-none-eabi- \
+      -DCMAKE_TOOLCHAIN_FILE=../toolchain.cmake \
+      -DCMAKE_BUILD_TYPE=Release ..
+make canokey.bin
+```
+Upload the `canokey.bin` to your development board. To initialize the Canokey, plug in your board [^3] and then execute:
+```
+cd ../utils/
+./device-config-init.sh 'Canokeys Canokey [OpenPGP PIV OATH] (00000000) 00 00'
+```
+We are done here. Now you have a Canokey(STM32), use it to do something.
+
+
+## OpenPGP
+By default
+- PIN: `123456`
+- Admin PIN: `12345678`
+
+I use Kleopatra to generate Key on Canokey. You can choose another way you preferred to generate.
+
+You can sign commits using GPG key on Canokey, using:
 ```
 git commit -a -S -m 'Signed commit'
 ```
+Before that, you should config your git:
+```
+gpg -K --keyid-format long # To get the long-keyid of your key
+git config --global user.signingkey long-keyid
+```
+and verify your Canokey:
+```
+gpg --edit-card
+> verify
+```
+
 If you meet **The email in this signature doesn’t match the committer email.**, try to change the commiter eamil:
 ```
 git config --global user.email your.email@gpg.key
 ```
 or add a new email address to your gpg key: [Associating an email with your GPG key
 ](https://docs.github.com/en/github/authenticating-to-github/associating-an-email-with-your-gpg-key).
+
+
+
+
+[^1]: You can follow this [guide](https://shawnhymel.com/1795/getting-started-with-stm32-nucleo-usb-virtual-com-port/).
+
+[^2]: Which is safer since no one knows how to finish the touching except the readers.
+
+[^3]: You can use `pcsc_scan` to make sure you have plugged in your board.
