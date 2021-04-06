@@ -50,9 +50,13 @@ git commit -a -S -m 'Signed commit'
 Before that, you should config your git:
 ```
 gpg -K --keyid-format long # To get the long-keyid of your key
-git config --global user.signingkey long-keyid
+git config --global user.signingkey LONG_KEYID
 ```
-and verify your Canokey:
+, export the public key and add it to Github:
+```
+gpg --armor --export LONG_KEYID
+```
+, and verify your Canokey:
 ```
 gpg --edit-card
 > verify
