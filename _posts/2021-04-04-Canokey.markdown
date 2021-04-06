@@ -65,6 +65,10 @@ git config --global user.email your.email@gpg.key
 or add a new email address to your gpg key: [Associating an email with your GPG key
 ](https://docs.github.com/en/github/authenticating-to-github/associating-an-email-with-your-gpg-key).
 
+If you want to sign every commit by default,
+```
+git config --global commit.gpgsign true
+```
 
 ## OTP
 Some websites (like Google, Github) support OTP as Two-factor authentication, you can use Canokey to secure and manage your OTP. 
