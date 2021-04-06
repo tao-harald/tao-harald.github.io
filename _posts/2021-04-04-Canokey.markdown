@@ -74,6 +74,11 @@ If you want to sign every commit by default,
 git config --global commit.gpgsign true
 ```
 
+If you meet **error: gpg failed to sign the data**, as I'm using fish,
+```
+set -Ux GPG_TTY (tty)
+```
+
 ## OTP
 Some websites (like Google, Github) support OTP as Two-factor authentication, you can use Canokey to secure and manage your OTP. 
 To do so, just visit [Canokey Web Console](https://console.canokeys.org/oath) and connect your device. 
