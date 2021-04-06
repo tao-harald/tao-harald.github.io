@@ -69,7 +69,7 @@ If you want to sign every commit by default,
 git config --global commit.gpgsign true
 ```
 
-If you meet **error: gpg failed to sign the data**, as I'm using fish,
+If you meet **error: gpg failed to sign the data**, which may be caused by no having `gtk2`. You should change the `pinentry-program` in `~/.gnupg/gpg-agent.conf` or set the GPG_TTY environment variable for the pinentry programs. As I'm using fish,
 ```
 set -Ux GPG_TTY (tty)
 ```
