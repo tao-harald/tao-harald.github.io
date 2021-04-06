@@ -56,11 +56,6 @@ git config --global user.signingkey LONG_KEYID
 ```
 gpg --armor --export LONG_KEYID
 ```
-, and verify your Canokey:
-```
-gpg --edit-card
-> verify
-```
 
 If you meet **The email in this signature doesn’t match the committer email.**, try to change the commiter eamil:
 ```
