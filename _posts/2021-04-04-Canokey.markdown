@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Use Canokey to secure your digital life"
-categories: General
+categories: Tech
 ---
 
 I'm using [Canokey(STM32)](https://github.com/canokeys/canokey-stm32) to secure my account and data.
@@ -123,7 +123,4 @@ Don't forget `-r canokeys` when you encounter **Failed to connect to yubikey.**
 
 [^3]: You can use `pcsc_scan` to make sure you have plugged in your board.
 
-[^4]: Don't forget to reload `gpg-agent`:
-```
-gpg-connect-agent reloadagent /bye
-```
+[^4]: Don't forget to reload `gpg-agent` using `gpg-connect-agent reloadagent /bye`.
