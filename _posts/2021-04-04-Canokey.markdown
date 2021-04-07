@@ -69,11 +69,11 @@ If you want to sign every commit by default,
 git config --global commit.gpgsign true
 ```
 
-If you meet **error: gpg failed to sign the data**, which may be caused by no having `gtk2`. You should set `pinentry-program` in `~/.gnupg/gpg-agent.conf`
+If you meet **error: gpg failed to sign the data**, which may be caused by no having `gtk2`. You should set `pinentry-program` in `~/.gnupg/gpg-agent.conf` [^4]
 ```
 pinentry-program /usr/bin/pinentry-qt
 ```
-or set the GPG_TTY environment variable for the pinentry programs. As I'm using fish,
+or set the `GPG_TTY` environment variable for the pinentry programs. As I'm using fish,
 ```
 set -Ux GPG_TTY (tty)
 ```
@@ -101,8 +101,29 @@ ssh-keygen -t ecdsa-sk
 ```
 will allow you to SSH with authentication from your Canokey. [Github](https://github.community/t/when-can-i-use-ssh-public-key-type-like-ed25519-sk-and-ecdsa-sk/3144) doesn't support `ecdsa-sk`.
 
+
+## PIV 
+
+By default
+- PIN: `123456`
+- PUK: `12345678`
+- Management Key: `010203040506070801020304050607080102030405060708`
+
+To manage and initialize the PIV function, you should install `yubico-piv-tool`, and execute
+```
+yubico-piv-tool -r canokeys -a set-chuid
+yubico-piv-tool -r canokeys -a set-ccc
+```
+Don't forget `-r canokeys` when you encounter **Failed to connect to yubikey.** 
+
+
 [^1]: You can follow this [guide](https://shawnhymel.com/1795/getting-started-with-stm32-nucleo-usb-virtual-com-port/).
 
 [^2]: Which is safer since no one knows how to finish the touching except the readers.
 
 [^3]: You can use `pcsc_scan` to make sure you have plugged in your board.
+
+[^4]: Don't forget to reload `gpg-agent`:
+```
+gpg-connect-agent reloadagent /bye
+```
