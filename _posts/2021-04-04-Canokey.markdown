@@ -52,7 +52,7 @@ You can also make your own USB breakout board, on which you can add a button to 
 
 ## Firmware 
 I'm using Arch Linux to build the Firmware:
-```
+```shell
 sudo pacman -S arm-none-eabi-gcc arm-none-eabi-newlib
 git clone --recursive https://github.com/canokeys/canokey-stm32
 cd canokey-stm32/ && mkdir build && cd build
@@ -62,7 +62,7 @@ cmake -DCROSS_COMPILE=/usr/bin/arm-none-eabi- \
 make canokey.bin
 ```
 Upload the `canokey.bin` to your development board. To initialize the Canokey, plug in your board [^3] and then execute:
-```
+```shell
 cd ../utils/
 ./device-config-init.sh 'Canokeys Canokey [OpenPGP PIV OATH] (00000000) 00 00'
 ```
@@ -77,37 +77,37 @@ By default
 I use Kleopatra to generate Key on Canokey. You can choose another way you preferred to generate.
 
 You can sign commits using GPG key on Canokey, using:
-```
+```shell
 git commit -a -S -m 'Signed commit'
 ```
 Before that, you should config your git:
-```
+```shell
 gpg -K --keyid-format long # To get the long-keyid of your key
 git config --global user.signingkey LONG_KEYID
 ```
 , export the public key and add it to Github:
-```
+```shell
 gpg --armor --export LONG_KEYID
 ```
 
 If you meet **The email in this signature doesn’t match the committer email.**, try to change the commiter eamil:
-```
+```shell
 git config --global user.email your.email@gpg.key
 ```
 or add a new email address to your gpg key: [Associating an email with your GPG key
 ](https://docs.github.com/en/github/authenticating-to-github/associating-an-email-with-your-gpg-key).
 
 If you want to sign every commit by default,
-```
+```shell
 git config --global commit.gpgsign true
 ```
 
 If you meet **error: gpg failed to sign the data**, which may be caused by no having `gtk2`. You should set `pinentry-program` in `~/.gnupg/gpg-agent.conf` [^4]
-```
+```shell
 pinentry-program /usr/bin/pinentry-qt
 ```
 or set the `GPG_TTY` environment variable for the pinentry programs. As I'm using fish,
-```
+```shell
 set -Ux GPG_TTY (tty)
 ```
 
@@ -129,7 +129,7 @@ You can set a PIN using Windows Hello.
 You can use your device to login website supporting WebAuthn.
 
 You can also follow [this guide](https://wiki.archlinux.org/index.php/Universal_2nd_Factor) to authentication for Arch Linux.
-```
+```shell
 ssh-keygen -t ecdsa-sk
 ```
 will allow you to SSH with authentication from your Canokey. [Github](https://github.community/t/when-can-i-use-ssh-public-key-type-like-ed25519-sk-and-ecdsa-sk/3144) doesn't support `ecdsa-sk`.
@@ -143,7 +143,7 @@ By default
 - Management Key: `010203040506070801020304050607080102030405060708`
 
 To manage and initialize the PIV function, you should install `yubico-piv-tool`, and execute
-```
+```shell
 yubico-piv-tool -r canokeys -a set-chuid
 yubico-piv-tool -r canokeys -a set-ccc
 ```
