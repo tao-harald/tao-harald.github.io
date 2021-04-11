@@ -8,6 +8,8 @@ about: 'about.html'
 <div class="vertical">
     <br />
     <div align="center">
+        <img src="{{ site.logo }}" width="150">
+        <br />
         <h1>\(\tau \)ao's Blog</h1>
         {% if site.description %} <h4> {{site.description}} </h4> {% endif %}
         <h4>
