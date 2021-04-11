@@ -12,43 +12,13 @@ I'm using [NUCLEO-L432KC](https://os.mbed.com/platforms/ST-Nucleo-L432KC/) devel
 As stated,
 > The NFC and touch sensing functions are unavailable on NUCLEO board.
 
-Touch function is indispensable in many authentication. While you can work around using a male to female jumper wire by linking the 3.3v pin and SB12 on the board when touch is required [^2] :
-![](/assets/img/canokey_sb12.jpg)
+By default, Canokey hardware has a touchpad on it's `PH3` pin ([ref](https://github.com/canokeys/canokey-stm32/blob/490e140342f0993e36e3441a4b42739ef4955e85/Inc/main.h#L70)) while NUCLEO board hasn't.
+Since touch function is indispensable in many authentications, you can work around it by replacing it with a button.
+Simply saying, using a male to female jumper wire by linking the 3.3v pin and SB12 on the board when touch is required [^2] :
+![Canokey PH3 SB12](/assets/img/canokey_sb12.jpg)
 
-Firmware is also required to be modified. Change the `GPIO_Touched()` and `device_periodic_task()` function in `Src/device.c` to 
-
-```C++
-static GPIO_PinState GPIO_Touched(void) {
-#ifdef DEBUG_OUTPUT
-  // Emulate touch events with UART input
-  if (LL_LPUART_IsActiveFlag_RXNE(DBG_UART.Instance)) {
-    int data = LL_LPUART_ReceiveData8(DBG_UART.Instance);
-    // DBG_MSG("%x\n", data);
-    if ('U' == data) return GPIO_PIN_SET;
-  }
-#endif
-  uint32_t counter = 0;
-
-  __disable_irq();
-  // measure the time of discharging
-  LL_GPIO_SetPinMode(TOUCH_GPIO_Port, TOUCH_Pin, GPIO_MODE_INPUT);
-  while ((LL_GPIO_ReadInputPort(TOUCH_GPIO_Port) & TOUCH_Pin) /*  && counter <= touch_threshold */)
-    ++counter;
-  __enable_irq();
-
-  if (counter > measure_touch) measure_touch = counter;
-  return counter > touch_threshold ? GPIO_PIN_SET : GPIO_PIN_RESET;
-}
-
-
-void device_periodic_task(void) {
-  if (GPIO_Touched()) set_touch_result(TOUCH_SHORT); 
-  device_update_led();
-}
-
-```
-
-You can also make your own USB breakout board, on which you can add a button to be the touch key.  
+You can also make your own USB breakout board, on which you can add a **real** button to `PH3` pin:
+![Canokey USB breakout board with button](/assets/img/canokey_usb_breakout.jpg)
 
 ## Firmware 
 I'm using Arch Linux to build the Firmware:
@@ -68,6 +38,11 @@ cd ../utils/
 ```
 We are done here. Now you have a Canokey(STM32), use it to do something.
 
+
+On NUCLEO board where the touchpad is changed to a button, you need to modify the firmware. Apply [nucleo.patch](/assets/file/nucleo.patch):
+```shell
+git apply nucleo.patch
+```
 
 ## OpenPGP
 By default
@@ -90,7 +65,7 @@ git config --global user.signingkey LONG_KEYID
 gpg --armor --export LONG_KEYID
 ```
 
-If you meet **The email in this signature doesn’t match the committer email.**, try to change the commiter eamil:
+If you meet **The email in this signature doesn’t match the committer email.**, try to change the committer eamil:
 ```shell
 git config --global user.email your.email@gpg.key
 ```
@@ -103,7 +78,7 @@ git config --global commit.gpgsign true
 ```
 
 If you meet **error: gpg failed to sign the data**, which may be caused by no having `gtk2`. You should set `pinentry-program` in `~/.gnupg/gpg-agent.conf` [^4]
-```shell
+```
 pinentry-program /usr/bin/pinentry-qt
 ```
 or set the `GPG_TTY` environment variable for the pinentry programs. As I'm using fish,
@@ -114,7 +89,7 @@ set -Ux GPG_TTY (tty)
 ## OTP
 Some websites (like Google, Github) support OTP as Two-factor authentication, you can use Canokey to secure and manage your OTP. 
 To do so, just visit [Canokey Web Console](https://console.canokeys.org/oath) and connect your device. 
-When adding a credential, the default config (for most websites) shoud be 
+When adding a credential, the default config (for most websites) should be 
  - Key Encoding: Base32
  - Algorithm: HMAC-SHA1
  - Type: TOTP

@@ -1,0 +1,65 @@
+diff --git a/Src/device.c b/Src/device.c
+index 984d9cf..d4aabf5 100644
+--- a/Src/device.c
++++ b/Src/device.c
+@@ -96,11 +96,6 @@ static GPIO_PinState GPIO_Touched(void) {
+   }
+ #endif
+   uint32_t counter = 0;
+-  LL_GPIO_SetPinMode(TOUCH_GPIO_Port, TOUCH_Pin, GPIO_MODE_OUTPUT_PP);
+-  LL_GPIO_SetOutputPin(TOUCH_GPIO_Port, TOUCH_Pin);
+-  // charging the capacitor (human body)
+-  for (int i = 0; i < 100; ++i)
+-    asm volatile("nop");
+ 
+   __disable_irq();
+   // measure the time of discharging
+@@ -118,47 +113,7 @@ void led_on(void) { HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET); }
+ void led_off(void) { HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET); }
+ 
+ void device_periodic_task(void) {
+-  enum {
+-    TOUCH_STATE_IDLE,
+-    TOUCH_STATE_DOWN,
+-    TOUCH_STATE_ASSERT,
+-    TOUCH_STATE_DEASSERT,
+-  };
+-  static uint32_t event_tick, fsm = TOUCH_STATE_IDLE;
+-  uint32_t tick = HAL_GetTick();
+-  switch (fsm)
+-  {
+-  case TOUCH_STATE_IDLE:
+-    if(GPIO_Touched()) {
+-      fsm = TOUCH_STATE_DOWN;
+-      event_tick = tick;
+-    }
+-    break;
+-  case TOUCH_STATE_DOWN:
+-    if(!GPIO_Touched()) {
+-      fsm = TOUCH_STATE_IDLE;
+-    } else if (tick - event_tick > 50) {
+-      set_touch_result(TOUCH_SHORT);
+-      fsm = TOUCH_STATE_ASSERT;
+-      event_tick = tick;
+-    }
+-    break;
+-  case TOUCH_STATE_ASSERT:
+-    if (tick - event_tick > TOUCH_GAP_TIME) {
+-      set_touch_result(TOUCH_NO);
+-      fsm = TOUCH_STATE_DEASSERT;
+-      DBG_MSG("touch deassert, max value measured: %u\r\n", measure_touch);
+-    }
+-    break;
+-  case TOUCH_STATE_DEASSERT:
+-    if(!GPIO_Touched()) {
+-      measure_touch = 0;
+-      fsm = TOUCH_STATE_IDLE;
+-    }
+-    break;
+-  default:
+-    break;
+-  }
++  if(GPIO_Touched()) set_touch_result(TOUCH_SHORT);
+   device_update_led();
+ }
+ 
