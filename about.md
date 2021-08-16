@@ -7,6 +7,12 @@ title: About me
 
 Undergraduate student studying Mathematics in Sun Yat-sen University, interested in algebra.
 
+## Notes
+
+- [Seminar] *Representation Theory*, Spring 2021: [Proof of Forbenius’s Formula](/math_essay/forbenius_formula/forbenius_formula.pdf)
+- [Seminar] *Compact Lie Groups*, Summer 2021: [Compact Lie Groups](/math_essay/lie_group/lie_group.pdf) 
+
+<br />
 
 <table>
     <tr>
