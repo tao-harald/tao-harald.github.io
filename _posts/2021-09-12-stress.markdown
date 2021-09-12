@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "Deal with pressure "
+categories: Daily
+---
+
+![Model of Stress](/assets/img/Transactional_Model_of_Stress_and_Coping_-_Richard_Lazarus.svg)
+
+To deal with heavy pressure, one should get to know how stress is caused. 
+The figure above illustrates the transactional model of stress and coping of Richard Lazarus. 
+From the model, we can know that the potential dangers and insufficient resources to prevent them are two main reasons for stress.
+
+> The model contends that stress may not be a stressor if the person does not perceive the stressors as a threat but rather as positive or even challenging. 
+> Also, if the person possesses or can use adequate coping skills, then stress may not actually be a result or develop because of the stressors. [^1]
+
+The statements above lead us to emotion-focused and problem-focused strategies for dealing with stress.
+> **Problem-focused** strategies employ action-oriented behavioral activities like planning, for example. 
+> **Emotion-focused** strategies involve the expression of emotion and often include the altering of expectations.[^1]
+
+> Time management skills which encompass goal setting, scheduling, and pacing are effective approaches to reducing stress. 
+> Additionally, students should keep up their physical and mental health with regular exercise, healthy eating, good sleep habits, and [mindfulness](https://en.wikipedia.org/wiki/Mindfulness) practices. [^2]
+
+Mindfulness is the practice of purposely bringing one's attention to the present moment without evaluation, which comes from Buddhism although has more secular application nowadays, like reducing pressure.
+
+### Refrerences
+[^1]: [Stress management - Wikipedia](https://en.wikipedia.org/wiki/Stress_management)
+[^2]: [Regents of the University of Michigan. (n.d.). Managing Stress.](https://campusmindworks.org/help-yourself/self-care/managing-stress/)
