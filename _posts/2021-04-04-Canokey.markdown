@@ -5,6 +5,7 @@ categories: Tech
 ---
 
 I'm using [Canokey(STM32)](https://github.com/canokeys/canokey-stm32) to secure my account and data.
+![Canokey USB breakout board with button](/assets/img/canokey_usb_breakout.jpg)
 
 ## Hardware
 
@@ -17,8 +18,7 @@ Since touch function is indispensable in many authentications, you can work arou
 Simply saying, using a male to female jumper wire by linking the 3.3v pin and SB12 on the board when touch is required [^2] :
 ![Canokey PH3 SB12](/assets/img/canokey_sb12.jpg)
 
-You can also make your own USB breakout board, on which you can add a **real** button to `PH3` pin:
-![Canokey USB breakout board with button](/assets/img/canokey_usb_breakout.jpg)
+You can also make your own USB breakout board, on which you can add a **real** button to `PH3` pin (refer to the first photo).
 
 ## Firmware 
 I'm using Arch Linux to build the Firmware:
