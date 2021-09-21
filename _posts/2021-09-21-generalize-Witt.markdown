@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Generalize Witt algebra to 3-sphere "
+abstract: "Witt Algebra can be defined as smooth vector fields on circle (i.e. \\(S^1\\)). In this article, we try to extend this definition to \\(S^3\\), a Lie group."
 categories: Math
 ---
 
@@ -33,31 +34,38 @@ Let \\(z = e^{i\theta} \\), then we recover the Witt algebra.
 
 ## Generalization
 
-Since \\(S^3 \cong SU(2)\\) has Lie group structure (compact and connected), smooth vector fields on \\(S^3\\)
+Since \\(S^3 \cong SU(2)\\) has Lie group structure (compact and connected), complex smooth vector fields on \\(S^3\\)
 
 \\[\mathrm{Vect}(S^3) := \left\\{ f(\exp x) \partial_x \,\middle\vert\, f: SU(2) \rightarrow \mathfrak{su} (2) \text{ smooth }, x \in \mathfrak{su} (2) \right\\}.\\]
 
 To deal with Fourier theory on \\(SU(2)\\), one should use representation theory.
 
 ### Harmonic Analysis
-Let \\(V_n(\mathbb C ^2)\\) be the vector space of holomorphic polynomials on  \\(\mathbb C ^2\\) that are homogeneous of degree \\(n\\).
-\\(SU(2)\\) has an action on it:
+Let \\(V_n(\mathbb C ^2)\\) be the vector space of holomorphic polynomials on  \\(\mathbb C ^2\\) that are homogeneous of degree \\(n\\), which has basis \\(\\{z_1^k z_2^{n-k} \mid k = 0,1, \cdots , n\\}\\).
+\\(g \in SU(2)\\) has an action on \\(P \in V_n(\mathbb C ^2)\\):
 \\[(g.P)(z) = P(g^{-1}z).\\]
-It's easy to verify that is a representation and denote the representation \\(\pi^n\\).
-\\(\\{(\pi^n, V_n(\mathbb C ^2)) \mid n=0,1,\cdots\\}\\) forms all the irreducible representations of \\(SU(2)\\) (thm. 3.32 [^2]). 
+It's easy to verify that is a representation and denote \\(\pi^n\\) the representation.
+\\(\\{(\pi^n, V_n(\mathbb C ^2)) \mid n=0,1,\cdots\\}\\) forms all irreducible representations of \\(SU(2)\\) (thm. 3.32 [^2]). 
 
 Thm. 3.38 [^2] gives the Fourier series on \\(SU(2)\\):
-\\[f(g) = \sum_{n=0}^\infty \sqrt{n+1} \operatorname{tr} \left(\hat f (n) \circ U^n(g^{-1}) \right), \quad \hat f (n) \in \mathrm{End}(V_n (\mathbb C ^2)).\\]
+\\[f(g) = \sum_{n=0}^\infty \sqrt{n+1} \operatorname{tr} \left(\hat f (n) \circ \pi^n(g^{-1}) \right), \quad \hat f (n) \in \mathrm{End}(V_n (\mathbb C ^2)).\\]
 Denote \\(\\{w_{i,j} \mid i,j =0,1, \cdots , n\\}\\) the basis on \\(\mathrm{End}(V_n (\mathbb C ^2))\\), then
-\\[\operatorname{tr} \left(w_{i,j} \circ U^n(g^{-1}) \right) = U^n_{j,i}(g^{-1}).\\]
+\\[\operatorname{tr} \left(w_{i,j} \circ \pi^n(g^{-1}) \right) = \pi^n_{j,i}(g^{-1}).\\]
 
-Moreover, 
+Moreover, lie algebra \\(\mathfrak{su} (2)\\) is a real vector space:
 \\[\mathfrak{su} (2) = \left\\{ m(x_1, x_2, x_3) := \begin{pmatrix}ix_1& - x_2 + i x_3 \\\\ x_2 + i x_3 & - i x_1\end{pmatrix} \,\middle\vert\, x_k \in \mathbb R \right\\}.\\]
 
-### Results
+## Results
 Hence \\(\mathrm{Vect}(S^3)\\) has basis
-\\[\left\\{L_{n,i,j,k} = U^n_{j,i}(exp\left(-m(x_1,x_2,x_3)\right))  \partial_{x_k} \,\middle\vert\, n \in \mathbb Z, \, i,j =0,1, \cdots , n, \, k = 1,2,3 \right\\}.\\]
+\\[\left\\{\hat L_{n,i,j,k} = i\pi^n_{j,i}(\exp\left(-m(x_1,x_2,x_3)\right))  \partial_{x_k} \,\middle\vert\, n \in \mathbb Z, \, i,j =0,1, \cdots , n, \, k = 1,2,3 \right\\}.\\]
 
+### Restriction
+We can recover Witt algebra by restriction. Since
+\\[\begin{aligned} \exp\left(-m(\theta,0,0)\right). z_2^n &= \begin{pmatrix}e^{-i\theta}& 0 \\\\ 
+0 & e^{i\theta}\end{pmatrix}. z_2^n \\\\ 
+&= e^{i n \theta } z_2^n, \\\\ 
+\left. \hat L_{n,0,0,1} \right|\_{\\{(\theta,0,0)\\}} &=  i\pi^n_{0,0}(\exp\left(-m(\theta,0,0)\right)) \\\\ &= ie^{i n \theta } \partial_{\theta}.
+\end{aligned}\\]
 ### Refrerences [^1]
 
 [^1]: <https://www.zhihu.com/question/481062168/answer/2130647776> (In Chinese)
