@@ -6,11 +6,8 @@ about: 'about.html'
 ---
 
 <div class="vertical">
-    <br />
     <div align="center">
-        <img src="{{ site.logo }}" width="150">
-        <br />
-        <h1>\(\tau \)ao's Blog</h1>
+        <div style="font-size:4em">\(\tau_{\alpha o} \)</div>
         {% if site.description %} <h4> {{site.description}} </h4> {% endif %}
         <h4>
             {% if page.about %} <a href='{{page.about | relative_url}}'> About me</a> {% endif %}
@@ -20,7 +17,7 @@ about: 'about.html'
         <br />
     </div>
 {% for post in site.posts %}
-  <h3>
+  <h3 align="middle">
     <a href="{{ post.url }}">{{ post.title }}</a>
   </h3>
   <p>

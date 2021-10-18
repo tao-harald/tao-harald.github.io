@@ -6,7 +6,7 @@
   <link rel="icon" href="{{ site.logo }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/latex.css/style.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css">
   <script defer src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js"></script>
@@ -22,7 +22,6 @@
     {% if page.title != 'Home' %}
     <a href="{{ "/" | absolute_url }}"> {{ site.title }} </a>
     {% endif %}
-    <br />  <br />
     <section>
 
       {{ content }}
