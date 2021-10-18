@@ -8,6 +8,32 @@
 */
 
 
+@font-face {
+  font-family: 'Kp';
+  src: url(/assets/font/jkpbn8a.woff2) format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+/* @font-face {
+  font-family: 'KaTeX_Main';
+  src: url(fonts/KaTeX_Main-BoldItalic.woff2) format('woff');
+  font-weight: bold;
+  font-style: italic;
+} */
+@font-face {
+  font-family: 'Kp';
+  src: url(/assets/font/jkpmit8a.woff2) format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Kp';
+  src: url(/assets/font/jkpmn8a.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* Box sizing rules */
 *,
 *::before,
@@ -39,7 +65,7 @@ html {
 }
 
 body {
-  font-family: KaTeX_Main, Georgia, Cambria, 'Times New Roman', Times, serif;
+  font-family: Kp, KaTeX_Main, Georgia, Cambria, 'Times New Roman', Times, serif;
   line-height: 1.8;
 
   max-width: 75ch;
