@@ -5,7 +5,7 @@ categories: Tech
 ---
 
 I'm using [Canokey(STM32)](https://github.com/canokeys/canokey-stm32) to secure my account and data.
-![Canokey USB breakout board with button](/assets/img/canokey_usb_breakout.jpg)
+![Canokey USB breakout board with button](/assets/img/canokey_usb_breakout.webp)
 
 ## Hardware
 
