@@ -14,12 +14,12 @@
   font-weight: bold;
   font-style: normal;
 }
-/* @font-face {
-  font-family: 'KaTeX_Main';
-  src: url(fonts/KaTeX_Main-BoldItalic.woff2) format('woff');
+@font-face {
+  font-family: 'Kp';
+  src: url(/assets/font/jkpbit8a.woff2) format('woff');
   font-weight: bold;
   font-style: italic;
-} */
+}
 @font-face {
   font-family: 'Kp';
   src: url(/assets/font/jkpmit8a.woff2) format('woff2');
