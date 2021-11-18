@@ -2,6 +2,7 @@
 layout: post
 title:  "Quick introduction to Chern Class"
 categories: Math
+published: false
 ---
 
 Let \\(\xi\\) be an rank \\(n\\) vector bundle with total space \\(E\\). Define \\(\mathbf{R}^n_{0} := \mathbf {R} ^{n}\setminus \\{0\\}\\), \\(E_b = \\pi^{-1}(b) \\) and \\(E_0\\) is the complement of \\(\xi\\)'s zero section. By default, (co)homology groups use integer coefficients.
