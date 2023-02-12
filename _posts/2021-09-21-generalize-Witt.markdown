@@ -3,6 +3,7 @@ layout: post
 title:  "Generalize Witt algebra to 3-sphere "
 abstract: "Witt Algebra can be defined as smooth vector fields on circle (i.e. \\(S^1\\)). In this article, we try to extend this definition to \\(S^3\\), a Lie group."
 categories: Math
+published: false
 ---
 
 
