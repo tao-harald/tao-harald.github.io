@@ -11,7 +11,7 @@ blog: 'blog.html'
 <h1>Tao Huang</h1>
 {% if site.description %} <h4> {{site.description}} </h4> {% endif %} 
 <h4>
-    <a href='{{page.blog | relative_url}}'> Blog</a>
+    <a href='/blog.html'>Blog</a>
     &nbsp;
     <a href='gallery/'> Gallery</a>
     &nbsp;

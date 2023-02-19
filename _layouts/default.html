@@ -20,13 +20,11 @@
 <body>
   <div class="wrapper">
     {% if page.title != 'Home' %}
-    <a href="{{ "/" | absolute_url }}"> {{ site.title }} </a>
+    <a href="{{ "/" | absolute_url }}"> Home</a>
     {% endif %}
-    <section>
 
-      {{ content }}
+    {{ content }}
 
-    </section>
     <footer>
       <small>
         {% if page.categories %}
