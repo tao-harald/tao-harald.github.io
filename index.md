@@ -14,8 +14,6 @@ blog: 'blog.html'
     <a href='/blog.html'>Blog</a>
     &nbsp;
     <a href='gallery/'> Gallery</a>
-    &nbsp;
-    <a href="https://mathstodon.xyz/@quandles"> Mathstodon</a>
 </h4>
 </div>
 
