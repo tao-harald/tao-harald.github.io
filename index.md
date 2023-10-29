@@ -7,10 +7,10 @@ blog: 'blog.html'
 
 <div align="center">
 <img src="/assets/img/profile.jpg" width=150 alt="profile">
-<br />
-<h1>Tao Huang</h1>
+<span style="font-size:44pt;">黄涛</span><br/>
+<span style="">(My name in English: Tao Huang)</span>
 {% if site.description %} <h4> {{site.description}} </h4> {% endif %} 
-<h4>
+<h4 style="margin-block-start: 0.5em;">
     <a href='/blog.html'>Blog</a>
     &nbsp;
     <a href='gallery/'> Gallery</a>

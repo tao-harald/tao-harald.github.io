@@ -32,6 +32,10 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Song';
+  src: url(/assets/font/song.woff2) format('woff2');
+}
 
 
 /* Box sizing rules */
@@ -65,8 +69,8 @@ html {
 }
 
 body {
-  font-family: Kp, KaTeX_Main, Georgia, Cambria, 'Times New Roman', Times, serif;
-  line-height: 1.8;
+  font-family: Kp, Song;
+  line-height: 1.6;
 
   max-width: 75ch;
   min-height: 100vh;
@@ -529,4 +533,4 @@ h6 {
 
 .katex { 
   font-size: 1em;
-} 
+}
