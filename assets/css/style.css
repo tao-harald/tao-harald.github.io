@@ -477,29 +477,29 @@ h1 {
 h2 {
   font-size: 1.7rem;
   line-height: 2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 h3 {
   font-size: 1.4rem;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 h4 {
   font-size: 1.2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 h5 {
   font-size: 1rem;
-  margin-top: 1.8rem;
+  margin-top: 0.8rem;
 }
 
 h6 {
   font-size: 1rem;
   font-style: italic;
   font-weight: normal;
-  margin-top: 2.5rem;
+  margin-top: 0.5rem;
 }
 
 h3,
@@ -529,6 +529,11 @@ h4,
 h5,
 h6 {
   margin-bottom: 0.8rem;
+}
+
+ol,
+ul {
+  padding-left: 20px;
 }
 
 .katex { 
