@@ -22,7 +22,7 @@ blog: 'blog.html'
 
 ## Education
 
-- M.S. \| 2022- \| Sun Yat-sen University
+- M.S. \| 2022-present \| Sun Yat-sen University
     - Mathematics, School of Mathematics
     - Advisor: Prof. Heng Xie
 - B.S. \| 2018-2022 \| Sun Yat-sen University
