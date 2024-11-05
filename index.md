@@ -8,7 +8,7 @@ blog: 'blog.html'
 <div align="center">
 <img src="/assets/img/profile.webp" width=150 alt="profile">
 <span style="font-size:24pt;">黄涛</span><br/>
-<span>(My name in English: Tao Huang)</span>
+<span>(In English: Tao Huang)</span>
 {% if site.description %} <h4> {{site.description}} </h4> {% endif %} 
 </div>
 
