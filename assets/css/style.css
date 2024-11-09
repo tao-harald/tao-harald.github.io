@@ -539,3 +539,10 @@ ul {
 .katex { 
   font-size: 1em;
 }
+
+.katex,
+.katex-display {
+    -webkit-user-select: all;
+       -moz-user-select: all;
+            user-select: all;
+}
